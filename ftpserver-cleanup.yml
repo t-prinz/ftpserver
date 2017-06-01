@@ -1,6 +1,6 @@
 ---
 - name:  Remove vsftpd
-  hosts:  
+  hosts:  all
   gather_facts:  False
 
   tasks:

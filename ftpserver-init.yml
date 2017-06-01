@@ -1,6 +1,6 @@
 ---
 - name:  Install vsftpd
-  hosts:  
+  hosts:  all
   gather_facts:  False
 
   tasks:
