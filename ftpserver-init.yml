@@ -1,0 +1,17 @@
+---
+- name:  Install vsftpd
+  hosts:  
+  gather_facts:  False
+
+  tasks:
+    - name:  Install vsftpd software
+      yum:
+        name:  vsftpd
+        state:  present
+
+    - name:  Disable vsftpd firewall rule
+      firewalld:
+        service:  ftp
+        immediate:  yes
+        permanent:  yes
+        state:  enabled

@@ -1,0 +1,17 @@
+---
+- name:  Remove vsftpd
+  hosts:  
+  gather_facts:  False
+
+  tasks:
+    - name:  Disable vsftpd firewall rule
+      firewalld:
+        service:  ftp
+        immediate:  yes
+        permanent:  yes
+        state:  disabled
+
+    - name:  Remove vsftpd software
+      yum:
+        name:  vsftpd
+        state:  absent
